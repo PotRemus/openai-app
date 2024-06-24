@@ -1,0 +1,69 @@
+#ai-settings {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--bg-primary-color);
+    z-index: 100;
+
+    &.settings-enter-active,
+    &.settings-leave-active {
+        transition: opacity .4s ease-out;
+    }
+
+    &.settings-enter-from,
+    &.settings-leave-to {
+        opacity: 0;
+    }
+
+    &.settings-enter-to,
+    &.settings-leave-from {
+        opacity: 1;
+    }
+
+    .ai-settings-header {
+        display: flex;
+        align-items: center;
+
+        .ai-settings-title {
+            flex: auto;
+            text-align: center;
+        }
+
+        .ai-settings-close {
+            margin: 10px;
+            padding: 5px;
+            border-radius: 50%;
+            display: flex;
+        }
+    }
+
+    .ai-settings-form {
+        max-width: 600px;
+        width: 100%;
+        margin: 0 auto;
+
+        .ai-settings-block {
+            .ai-settings-block-title {
+                margin: 1.5em 0 .5em;
+            }
+
+            .ai-settings-block-subtitle {
+                margin: .5em 0 .5em;
+                color: var(--font-anotation-color);
+            }
+
+            .ai-settings-apikey {
+                width: 100%;
+            }
+        }
+
+        .ai-settings-action {
+            margin: 2em 0 0;
+            display: flex;
+            gap: 30px;
+            justify-content: flex-end;
+        }
+    }
+}

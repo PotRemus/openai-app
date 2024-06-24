@@ -1,0 +1,22 @@
+{
+    "chat": {
+        "prompt-placeholder": "Message",
+        "prompt-file-local": "Charger un fichier local"
+    },
+    "menu": {
+        "new-thread": "Nouveau chat",
+        "previous-30-days": "30 derniers jours",
+        "thread-empty-title": "Sans titre",
+        "confirm-delete-thread": "Voulez-vous vraiment supprimer le chat ?\n\n  - {title}"
+    },
+    "settings": {
+        "title": "Paramètres",
+        "language": "Langue:",
+        "language-select": "Choisir la langue",
+        "apiKey": "Open AI API key:",
+        "apiKeyHelp": "Vous pouvez obtenir votre clé API sur le site Web OpenAI. Ceci est nécessaire pour utiliser l'assistant.",
+        "apiKeyPlacholder": "sk-...",
+        "save": "Sauvegarder",
+        "cancel": "Annuler"
+    }
+}

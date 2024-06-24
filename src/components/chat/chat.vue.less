@@ -1,0 +1,278 @@
+#ai-chat {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+
+    .ai-chat-content {
+        flex: auto;
+        overflow-x: none;
+        overflow-y: auto;
+        padding: 1.25rem;
+        box-sizing: border-box;
+        box-shadow: inset 0 1rem 1rem -1rem #0000001a, inset 0 -1rem 1rem -1rem #0000001a;
+        position: relative;
+
+        .ai-chat-date {
+            color: var(--font-anotation-color);
+            font-size: 0.8em;
+            line-height: 0.8em;
+            margin: 0;
+            text-align: center;
+        }
+
+        .ai-chat-message {
+            align-items: flex-end;
+            display: flex;
+            margin-top: 15px;
+            position: relative;
+
+            .ai-chat-avatar {
+                border-radius: 50%;
+                flex: none;
+                height: 25px;
+                margin: 0 10px 20px 0;
+                overflow: hidden;
+                width: 25px;
+                color: var(--font-primary-color);
+                font-size: 24px;
+            }
+
+            .ai-chat-message-content {
+                display: flex;
+                flex: auto;
+                flex-direction: column;
+                justify-content: flex-start;
+                width: calc(100% - 35px);
+
+                .ai-chat-message-text {
+                    border-radius: 10px;
+                    max-width: 95%;
+                    overflow-wrap: break-word;
+                    word-break: break-word;
+
+                    .typing {
+                        display: inline-block;
+                        width: 5px;
+                        height: 5px;
+                        margin: 5px 2px;
+                        box-sizing: border-box;
+                        background: var(--font-secondary-color);
+                        ;
+                        border-radius: 50%;
+
+                        &.typing-1 {
+                            animation: typing 2s infinite;
+                        }
+
+                        &.typing-2 {
+                            animation: typing 2s 250ms infinite;
+                        }
+
+                        &.typing-3 {
+                            animation: typing 2s 500ms infinite;
+                        }
+                    }
+
+                    &:first-child {
+                        margin: 0;
+                    }
+                }
+
+                .ai-chat-timestamp {
+                    color: var(--font-anotation-color);
+                    font-size: 12px;
+                    line-height: 15px;
+                    margin-top: 2px;
+                }
+            }
+
+            &.ai-chat-response {
+                .ai-chat-avatar {
+                    margin: 0 10px 0 0;
+                }
+            }
+
+            &.assistant {
+                .ai-chat-message-content {
+                    align-items: flex-start;
+
+                    .ai-chat-message-text {
+                        background-color: var(--bg-msg-assistant-color);
+                        border-bottom-left-radius: 0;
+                        color: var(--font-secondary-color);
+                        margin: 2px 0 0;
+                        padding: 10px;
+                    }
+                }
+            }
+
+            &.user {
+                .ai-chat-message-content {
+                    align-items: flex-end;
+
+                    .ai-chat-message-text {
+                        background-color: #427ADB;
+                        border-bottom-right-radius: 0;
+                        color: var(--font-secondary-color);
+                        margin: 2px 0 0;
+                        padding: 10px;
+
+                    }
+                }
+            }
+        }
+    }
+
+    .ai-chat-form {
+        align-items: flex-end;
+        display: flex;
+
+        .ai-form-action {
+            position: relative;
+            margin-bottom: 13px;
+
+            .ai-form-action-attach {
+                border-radius: 50%;
+                padding: 0;
+                margin: 0;
+                height: 40px;
+                width: 40px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-left: 10px;
+            }
+
+            .ai-form-action-menu {
+                position: absolute;
+                left: 10px;
+                bottom: calc(100% + 5px);
+                background-color: var(--font-secondary-color);
+                border: 1px solid var(--bg-thread-separator-color);
+                border-radius: 5px;
+                padding: 5px;
+                z-index: 1;
+
+                button {
+                    padding: 10px;
+                    margin: 0;
+                    height: 40px;
+                    border-radius: 5px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+
+                    .button-icon {
+                        margin-right: 5px;
+                    }
+                }
+            }
+        }
+
+        .ai-chat-entry {
+            flex: auto;
+
+            display: flex;
+            flex-direction: column;
+            border: 1px solid #0000;
+            border-radius: 24px;
+            background-color: #f5f6fa;
+            margin: 10px;
+            padding: 0 10px;
+
+            .ai-chat-entry-images {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: flex-start;
+                padding: 5px 0 0 0;
+                gap: 10px;
+
+                .ai-chat-image {
+                    position: relative;
+                    border: 1px solid var(--bg-thread-separator-color);
+                    border-radius: 5px;
+                    display: flex;
+
+                    img {
+                        border-radius: 5px;
+                        max-width: 60px;
+                        max-height: 60px;
+                    }
+
+                    .ai-chat-image-remove {
+                        display: none;
+                        padding: 0;
+                        margin: 0;
+                        position: absolute;
+                        top: -10px;
+                        right: -10px;
+                        border-radius: 50%;
+                        background-color: var(--bg-primary-color);
+                    }
+
+                    &:hover {
+                        .ai-chat-image-remove {
+                            display: flex;
+                        }
+                    }
+                }
+            }
+
+            .ai-chat-entry-text {
+                display: flex;
+                align-items: flex-end;
+            }
+
+            .ai-chat-prompt {
+                background: none;
+                border: none;
+                box-shadow: none;
+                box-sizing: border-box;
+                display: block;
+                flex: auto;
+                height: 42px;
+                margin: 0;
+                max-height: 200px;
+                outline: none;
+                padding: 10px 15px;
+                resize: none;
+                width: 100%;
+            }
+
+            .ai-form-submit {
+                border-radius: 50%;
+                padding: 0;
+                margin: 0;
+                height: 32px;
+                width: 32px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-bottom: 5px;
+                color: rgba(255, 255, 255, 1);
+                background-color: rgba(0, 0, 0, 1);
+
+                &:disabled {
+                    background-color: #f5f6fa;
+                    color: rgba(244, 244, 244, 1);
+                    background-color: rgba(215, 215, 215, 1)
+                }
+            }
+        }
+    }
+}
+
+@keyframes typing {
+
+    0%,
+    75%,
+    100% {
+        transform: translate(0, 0.25rem) scale(0.9);
+        opacity: 0.5;
+    }
+
+    25% {
+        transform: translate(0, -0.25rem) scale(1);
+        opacity: 1;
+    }
+}

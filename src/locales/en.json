@@ -1,0 +1,21 @@
+{
+    "chat": {
+        "prompt-placeholder": "Message",
+        "prompt-file-local": "Load a local file"
+    },
+    "menu": {
+        "new-thread": "New chat",
+        "previous-30-days": "Last 30 days",
+        "thread-empty-title": "Untitled"
+    },
+    "settings": {
+        "title": "Settings",
+        "language": "Language:",
+        "language-select": "Select language",
+        "apiKey": "Open AI API key:",
+        "apiKeyHelp": "You can get your API key from the OpenAI website. This is required to use the assistant.",
+        "apiKeyPlacholder": "sk-...",
+        "save": "Save",
+        "cancel": "Cancel"
+    }
+}

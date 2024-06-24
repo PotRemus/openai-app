@@ -1,0 +1,38 @@
+:root {
+    --font-primary-color: #333;
+    --font-secondary-color: #FFF;
+    --font-anotation-color: #707689;
+
+    --bg-primary-color: #F6F6F6;
+    --bg-mask-color: #0F0F0F;
+
+    --bg-msg-assistant-color: #333;
+    --bg-msg-user-color: #427ADB;
+    --pre-msg-assistant-color: #EEE;
+    --bg-thread-separator-color: #aaa;
+}
+
+.pure-button-reset {
+    background: none;
+    border: none;
+    box-shadow: none;
+
+    &:active {
+        box-shadow: none;
+        border: none;
+    }
+
+    &:hover {
+        box-shadow: 0 0 0 1px rgba(0, 0, 0, .15) inset, 0 0 6px rgba(0, 0, 0, .2) inset;
+    }
+
+    &:focus {
+        background: none;
+    }
+}
+
+.pure-form {
+    .textarea:disabled {
+        opacity: 0.5;
+    }
+}
