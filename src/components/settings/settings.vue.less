@@ -41,8 +41,13 @@
 
     .ai-settings-form {
         max-width: 600px;
-        width: 100%;
-        margin: 0 auto;
+        width: calc(100% - 30px);
+        margin: 0 15px;
+
+        @media screen and (min-width: 600px) {
+            width: 100%;
+            margin: 0 auto;
+        }
 
         .ai-settings-block {
             .ai-settings-block-title {
